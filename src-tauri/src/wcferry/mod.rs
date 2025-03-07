@@ -418,6 +418,10 @@ impl WeChat {
         execute_wcf_command!(self, Functions::FuncRefreshPyq, ReqMsg::Ui64(id), Status 0, "刷新朋友圈")
     }
 
+    pub fn send_xml(&self, xml: wcf::XmlMsg) -> Result<bool, Box<dyn std::error::Error>> {
+        execute_wcf_command!(self, Functions::FuncSendXml, ReqMsg::Xml(xml), Status 0, "发送xml消息")
+    }
+
     pub fn send_text(&self, text: wcf::TextMsg) -> Result<bool, Box<dyn std::error::Error>> {
         execute_wcf_command!(self, Functions::FuncSendTxt, ReqMsg::Txt(text), Status 0, "发送文本消息")
     }

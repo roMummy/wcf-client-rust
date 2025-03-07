@@ -460,6 +460,20 @@ pub async fn refresh_pyq(query: Id, wechat: Arc<Mutex<WeChat>>) -> Result<Json, 
     wechat_api_handler!(wechat, WeChat::refresh_pyq, query.id, "刷新朋友圈")
 }
 
+/// 发送xml消息
+#[utoipa::path(
+    post,
+    tag = "WCF",
+    path = "/xml",
+    request_body = XmlMsg,
+    responses(
+        (status = 200, body = ApiResponseBool, description = "发送xml消息")
+    )
+)]
+pub async fn send_xml(xml: XmlMsg, wechat: Arc<Mutex<WeChat>>) -> Result<Json, Infallible> {
+    wechat_api_handler!(wechat, WeChat::send_xml, xml, "发送xml消息")
+}
+
 /// 发送文本消息
 #[utoipa::path(
     post,
