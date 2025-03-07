@@ -273,7 +273,7 @@ pub fn get_routes(
     build_route_fn!(tables, GET "tables", get_tables, PATH String, wechat);
     build_route_fn!(msgtypes, GET "msg-types", get_msg_types, wechat);
     build_route_fn!(pyq, GET "pyq", refresh_pyq, QUERY Id, wechat);
-    build_route_fn!(sendtext, POST "xml", send_xml, JSON, wechat);
+    build_route_fn!(sendxml, POST "xml", send_xml, JSON, wechat);
     build_route_fn!(sendtext, POST "text", send_text, JSON, wechat);
     build_route_fn!(sendimage, POST "image", send_image, JSON, wechat);
     build_route_fn!(sendfile, POST "file", send_file, JSON, wechat);
@@ -302,6 +302,7 @@ pub fn get_routes(
         .or(tables(wechat.clone()))
         .or(msgtypes(wechat.clone()))
         .or(pyq(wechat.clone()))
+        .or(sendxml(wechat.clone()))
         .or(sendtext(wechat.clone()))
         .or(sendimage(wechat.clone()))
         .or(sendfile(wechat.clone()))
