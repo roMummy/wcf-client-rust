@@ -1,7 +1,7 @@
 use crate::wcferry::{
     wcf::{
         AttachMsg, AudioMsg, DbNames, DbQuery, DbTable, DbTables, DecPath, ForwardMsg, MemberMgmt,
-        MsgTypes, PatMsg, PathMsg, RichText, RpcContact, RpcContacts, TextMsg, Transfer, UserInfo,
+        MsgTypes, PatMsg, PathMsg, RichText, RpcContact, RpcContacts, TextMsg, XmlMsg, Transfer, UserInfo,
         Verification,
     },
     SelfInfo, WeChat,
@@ -248,7 +248,7 @@ pub fn get_routes(
         components(schemas(
             ApiResponse<bool>, ApiResponse<String>, AttachMsg, AudioMsg, DbNames, DbQuery, DbTable, DbTables,
             DecPath, FieldContent, ForwardMsg, Image, SaveFile, MemberMgmt, MsgTypes, PatMsg, PathMsg, RichText, RpcContact,
-            RpcContacts, TextMsg, Transfer, UserInfo, Verification, ApiResponse<Member>, Member, SelfInfo
+            RpcContacts, TextMsg, XmlMsg, Transfer, UserInfo, Verification, ApiResponse<Member>, Member, SelfInfo
         )),
         tags((name = "WCF", description = "玩微信的接口")),
     )]
