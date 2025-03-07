@@ -242,7 +242,7 @@ pub fn get_routes(
     #[openapi(
         info(description = "<a href='https://github.com/lich0821/WeChatFerry'>WeChatFerry</a> 一个玩微信的工具。<table align='left'><tbody><tr><td align='center'><img width='160' alt='碲矿' src='https://s2.loli.net/2023/09/25/fub5VAPSa8srwyM.jpg'><div align='center' width='200'>后台回复 <code>WCF</code> 加群交流</div></td><td align='center'><img width='160' alt='赞赏' src='https://s2.loli.net/2023/09/25/gkh9uWZVOxzNPAX.jpg'><div align='center' width='200'>如果你觉得有用</div></td><td width='20%'></td><td width='20%'></td><td width='20%'></td></tr></tbody></table>"),
         paths(is_login, get_self_wxid, get_user_info, get_contacts, get_dbs, get_tables, get_msg_types, save_audio,
-            refresh_pyq, send_text, send_image, send_file, send_rich_text, send_pat_msg, forward_msg, save_image,save_file,
+            refresh_pyq, send_text, send_xml, send_image, send_file, send_rich_text, send_pat_msg, forward_msg, save_image,save_file,
             recv_transfer, query_sql, accept_new_friend, add_chatroom_member, invite_chatroom_member,
             delete_chatroom_member, revoke_msg, query_room_member),
         components(schemas(
